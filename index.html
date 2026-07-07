@@ -65,13 +65,14 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-bottom: 2px solid var(--accent-gold);
             padding-bottom: 4px;
         }
 
         .info-list {
             list-style: none;
+            margin-bottom: 20px;
         }
 
         .info-list li {
@@ -83,6 +84,15 @@
 
         .info-list li span {
             margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .alert-text {
+            color: #C53030;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 15px;
         }
 
         .btn {
@@ -123,30 +133,46 @@
             <img src="IMG_2136.jpg" alt="Reilly Electric, LLC Business Card" class="business-card">
         </div>
 
-        <!-- Details Checklist Panel -->
+        <!-- Comprehensive Services List -->
         <div class="info-panel">
-            <div class="section-title">📝 Weeknight Availability Booking Request</div>
-            <p style="font-size: 14px; color: var(--neutral-dark); margin-bottom: 12px; font-weight: 500;">
-                Please tap a number below to check weeknight availability. Be sure to include:
-            </p>
+            <div class="section-title">🛠️ Our Services Include</div>
             <ul class="info-list">
+                <li><span>💡</span> Lighting installations & upgrades</li>
+                <li><span>🔌</span> Outlet, switch, and panel services</li>
+                <li><span>❄️</span> Power installs for A/C units</li>
+                <li><span>🛠️</span> General troubleshooting & electrical repairs</li>
+                <li><span>🏡</span> Residential & commercial electrical solutions</li>
+                <li><span>🔋</span> Portable & Whole house standby generators</li>
+                <li><span>🚗</span> Electric car chargers</li>
+                <li><span>⚡</span> Panel & service upgrades</li>
+            </ul>
+
+            <!-- Details Checklist Sub-Panel -->
+            <div class="section-title">Doc Title📝 Booking Requirements</div>
+            <p style="font-size: 14px; color: var(--neutral-dark); margin-bottom: 12px; font-weight: 500;">
+                Please tap a number below to check availability. Be sure to include:
+            </p>
+            <ul class="info-list" style="margin-bottom: 0;">
                 <li><span>✅</span> Your Name</li>
                 <li><span>✅</span> Street Address</li>
                 <li><span>✅</span> Town & State</li>
-                <li><span>✅</span> Requested Weeknight & Time Block</li>
+                <li><span>✅</span> Requested Day & Time Block</li>
             </ul>
         </div>
+
+        <!-- Scarcity Alert Message -->
+        <p class="alert-text">⏰ Evening slots are limited and filling up fast!</p>
 
         <!-- Text Action Buttons -->
         <p style="text-align: center; font-size: 14px; font-weight: bold; color: var(--primary-blue); margin-bottom: 5px;">
             Tap a number below to text us directly to book:
         </p>
 
-        <a href="sms:+18606340991?&body=Hi Reilly Electric! I'd like to check weeknight availability for an appointment.%0AName:%0AAddress:%0ATown/State:%0APerferred Weeknight/Time:" class="btn">
+        <a href="sms:+18606340991?&body=Hi Reilly Electric! I'd like to check availability for an appointment.%0AName:%0AAddress:%0ATown/State:%0APreferred Day/Time:" class="btn">
             📱 Text 860-634-0991
         </a>
 
-        <a href="sms:+12039823123?&body=Hi Reilly Electric! I'd like to check weeknight availability for an appointment.%0AName:%0AAddress:%0ATown/State:%0APerferred Weeknight/Time:" class="btn">
+        <a href="sms:+12039823123?&body=Hi Reilly Electric! I'd like to check availability for an appointment.%0AName:%0AAddress:%0ATown/State:%0APreferred Day/Time:" class="btn">
             📱 Text 203-982-3123
         </a>
 
