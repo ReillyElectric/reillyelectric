@@ -37,7 +37,6 @@
             border-top: 6px solid var(--primary-blue);
         }
 
-        /* Business Card Styling */
         .business-card-wrapper {
             width: 100%;
             text-align: center;
@@ -54,6 +53,29 @@
             border-radius: 4px;
             display: block;
             margin: 0 auto;
+        }
+
+        .services-box {
+            background: #F8FAFC;
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .services-box h4 {
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .services-box ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .services-box li {
+            margin-bottom: 5px;
+            font-size: 14px;
         }
 
         .instruction-box {
@@ -74,6 +96,18 @@
         .instruction-box p {
             font-size: 14px;
             color: var(--neutral-dark);
+            margin-bottom: 10px;
+        }
+
+        .availability-badge {
+            background: #E2E8F0;
+            color: #1A365D;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 3px;
         }
 
         .btn {
@@ -109,28 +143,47 @@
 
     <div class="container">
         
-        <!-- Displaying uploaded image file dynamically -->
+        <!-- Display your business card at the top -->
         <div class="business-card-wrapper">
             <img src="IMG_2136.jpg" alt="Reilly Electric, LLC Business Card" class="business-card">
         </div>
 
-        <div class="instruction-box">
-            <h3>Ready to Book Your Appointment?</h3>
-            <p>Tap either phone number below to send us a text message directly. Please include your name, preferred date, and a brief description of the job!</p>
+        <!-- Our Services Section -->
+        <div class="services-box">
+            <h4>Our Electrical Services:</h4>
+            <ul>
+                <li>⚡ <strong>24/7 Emergency Repairs:</strong> Quick response for immediate needs.</li>
+                <li>🔌 <strong>Electrical Panel Upgrades:</strong> Modernize your home's power center.</li>
+                <li>🏊 <strong>Pool Electrical Services:</strong> Expert wiring for pumps, heaters, & lighting.</li>
+                <li>❄️ <strong>AMP Upgrades for AC Units:</strong> Power for peak performance.</li>
+                <li>🛠️ <strong>Full Range of Electrical Services:</strong> Lighting installs to complete wiring.</li>
+            </ul>
         </div>
 
-        <!-- Text Button 1 -->
-        <a href="sms:+18606340991?&body=Hi Reilly Electric, I would like to book an electrical appointment!" class="btn">
+        <!-- Instructions & Availability Section -->
+        <div class="instruction-box">
+            <h3>Ready to Book Your Appointment?</h3>
+            <p>Tap either number below to text us directly. Please fill out the template with your information!</p>
+            
+            <div style="margin-top: 10px;">
+                <span class="availability-badge">Weekdays: 7am - 2pm</span>
+                <span class="availability-badge">Weeknights: 5pm - 7pm</span>
+                <span class="availability-badge" style="background:#FED7D7; color:#C53030;">Closed Fridays & Sundays</span>
+            </div>
+        </div>
+
+        <!-- Text Button 1 (Formats an auto-text message prompt for the user) -->
+        <a href="sms:+18606340991?&body=Hi Reilly Electric! I would like to request an electrical appointment.%0AName:%0AAddress:%0ATown and State:" class="btn">
             📱 Text 860-634-0991
         </a>
 
         <!-- Text Button 2 -->
-        <a href="sms:+12039823123?&body=Hi Reilly Electric, I would like to book an electrical appointment!" class="btn">
+        <a href="sms:+12039823123?&body=Hi Reilly Electric! I would like to request an electrical appointment.%0AName:%0AAddress:%0ATown and State:" class="btn">
             📱 Text 203-982-3123
         </a>
 
         <div class="footer">
-            &copy; 2026 Reilly Electric, LLC. All rights reserved.
+            &copy; 2026 Reilly Electric, LLC. All rights reserved. <br> Serving All of Connecticut.
         </div>
     </div>
 
