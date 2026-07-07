@@ -1,1 +1,17 @@
+value;
+            const address = document.getElementById('address').value;
+            const timeframe = document.getElementById('timeframe').value;
+            const issue = document.getElementById('issue').value;
 
+            // Generate clean Venmo deep-link note context for the business
+            const venmoNote = encodeURIComponent(`Reilly Electric Service Call: ${name} - ${timeframe}`);
+            const venmoUrl = `https://venmo.com/Rebecca_Champagne?tx=pay&amount=150&note=${venmoNote}`;
+            
+            // Seamlessly route user to the Venmo payment step in a fresh tab
+            window.open(venmoUrl, '_blank');
+            
+            alert("Thank you! Your information has been prepared. We are redirecting you to Venmo to complete the $150 booking confirmation payment. We will call you shortly to confirm your dispatch exact date.");
+        }
+    </script>
+</body>
+</html>
