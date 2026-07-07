@@ -40,11 +40,7 @@
         .business-card-wrapper {
             width: 100%;
             text-align: center;
-            margin-bottom: 25px;
-            background-color: var(--white);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
         }
 
         .business-card {
@@ -55,59 +51,48 @@
             margin: 0 auto;
         }
 
-        .services-box {
+        /* Form styling */
+        .booking-form {
             background: #F8FAFC;
-            border-left: 4px solid var(--accent-gold);
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .services-box h4 {
-            color: var(--primary-blue);
-            margin-bottom: 8px;
-        }
-
-        .services-box ul {
-            list-style-type: none;
-            padding-left: 5px;
-        }
-
-        .services-box li {
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-
-        .instruction-box {
-            text-align: center;
             padding: 20px;
-            background: #F0F4F8;
             border-radius: 8px;
             border: 2px dashed var(--accent-gold);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        .instruction-box h3 {
+        .form-title {
             color: var(--primary-blue);
-            margin-bottom: 10px;
-            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
         }
 
-        .instruction-box p {
-            font-size: 14px;
-            color: var(--neutral-dark);
-            margin-bottom: 10px;
-        }
-
-        .availability-badge {
-            background: #E2E8F0;
-            color: #1A365D;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
+        .hours-info {
+            text-align: center;
+            font-size: 13px;
+            color: #4A5568;
+            margin-bottom: 15px;
             font-weight: bold;
-            display: inline-block;
-            margin: 3px;
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #CBD5E0;
+            border-radius: 5px;
+            font-size: 15px;
         }
 
         .btn {
@@ -115,20 +100,20 @@
             background: var(--primary-blue);
             color: var(--white);
             padding: 16px;
-            margin: 15px auto;
+            margin: 10px auto;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
             text-align: center;
-            max-width: 100%;
-            transition: background 0.2s ease;
+            width: 100%;
+            border: none;
+            cursor: pointer;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .btn:active {
-            background: #102A43;
-            transform: scale(0.98);
+        .btn.secondary {
+            background: #2B6CB0;
         }
 
         .footer {
@@ -148,43 +133,80 @@
             <img src="IMG_2136.jpg" alt="Reilly Electric, LLC Business Card" class="business-card">
         </div>
 
-        <!-- Services -->
-        <div class="services-box">
-            <h4>Our Electrical Services:</h4>
-            <ul>
-                <li>⚡ <strong>24/7 Emergency Repairs:</strong> Quick response for immediate needs.</li>
-                <li>🔌 <strong>Electrical Panel Upgrades:</strong> Modernize your home's power center.</li>
-                <li>🏊 <strong>Pool Electrical Services:</strong> Expert wiring for pumps, heaters, & lighting.</li>
-                <li>❄️ <strong>AMP Upgrades for AC Units:</strong> Power for peak performance.</li>
-                <li>🛠️ <strong>Full Range of Electrical Services:</strong> Lighting installs to complete wiring.</li>
-            </ul>
-        </div>
+        <!-- Interactive Typing Fields Box -->
+        <div class="booking-form">
+            <h3 class="form-title">Enter Your Details to Request Booking</h3>
+            <p class="hours-info">
+                Available Weekdays: 7am-2pm | Weeknights: 5pm-7pm <br>
+                <span style="color: #C53030;">Closed Fridays & Sundays</span>
+            </p>
 
-        <!-- Instructions & Hours -->
-        <div class="instruction-box">
-            <h3>Ready to Book Your Appointment?</h3>
-            <p>Tap either number below to text us directly. A template text message will automatically open up for you to complete!</p>
-            
-            <div style="margin-top: 10px;">
-                <span class="availability-badge">Weekdays: 7am - 2pm</span>
-                <span class="availability-badge">Weeknights: 5pm - 7pm</span>
-                <span class="availability-badge" style="background:#FED7D7; color:#C53030;">Closed Fridays & Sundays</span>
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text" id="custName" placeholder="Your Full Name">
             </div>
+
+            <div class="input-group">
+                <label>Address</label>
+                <input type="text" id="custAddress" placeholder="Street Address">
+            </div>
+
+            <div class="input-group">
+                <label>Town / State</label>
+                <input type="text" id="custTown" placeholder="e.g. Wallingford, CT">
+            </div>
+
+            <div class="input-group">
+                <label>Preferred Day & Time Block</label>
+                <select id="custTime">
+                    <option value="">-- Choose a time slot --</option>
+                    <option value="Weekday (7am - 2pm)">Weekday (7am - 2pm)</option>
+                    <option value="Weeknight (5pm - 7pm)">Weeknight (5pm - 7pm)</option>
+                    <option value="Saturday Appointment">Saturday Appointment</option>
+                </select>
+            </div>
+            
+            <p style="font-size: 12px; text-align: center; color: #718096; margin-top: 10px;">
+                Fill out the fields above, then tap a button below to launch your text request!
+            </p>
         </div>
 
-        <!-- Text Messaging Target Buttons with Auto-Form Fill Parameters -->
-        <a href="sms:+18606340991?&body=Hi Reilly Electric! I would like to request an appointment.%0AName:%0AAddress:%0ATown and State:" class="btn">
-            📱 Text 860-634-0991
-        </a>
+        <!-- Action Buttons that pull data dynamically via JavaScript -->
+        <button onclick="sendText('+18606340991')" class="btn">
+            📱 Text 860-634-0991 to Book
+        </button>
 
-        <a href="sms:+12039823123?&body=Hi Reilly Electric! I would like to request an appointment.%0AName:%0AAddress:%0ATown and State:" class="btn">
-            📱 Text 203-982-3123
-        </a>
+        <button onclick="sendText('+12039823123')" class="btn secondary">
+            📱 Text 203-982-3123 to Book
+        </button>
 
         <div class="footer">
             &copy; 2026 Reilly Electric, LLC. All rights reserved. <br> Serving All of Connecticut.
         </div>
     </div>
+
+    <script>
+        function sendText(phoneNumber) {
+            // Grab values typed into the screen boxes
+            var name = document.getElementById('custName').value || '[Empty]';
+            var address = document.getElementById('custAddress').value || '[Empty]';
+            var town = document.getElementById('custTown').value || '[Empty]';
+            var timeSlot = document.getElementById('custTime').value || '[Not Selected]';
+
+            // Construct the clean text message
+            var message = "Hi Reilly Electric! I would like to request an electrical appointment.\n\n" +
+                          "Name: " + name + "\n" +
+                          "Address: " + address + "\n" +
+                          "Town/State: " + town + "\n" +
+                          "Requested Time: " + timeSlot;
+
+            // Encode text strings safely for SMS app launch
+            var encodedMessage = encodeURIComponent(message);
+            
+            // Launch the customer's native messaging application
+            window.location.href = "sms:" + phoneNumber + "?&body=" + encodedMessage;
+        }
+    </script>
 
 </body>
 </html>
