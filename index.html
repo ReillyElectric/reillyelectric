@@ -243,9 +243,7 @@
             const timeframe = document.getElementById('timeframe').value;
             const issue = document.getElementById('issue').value;
 
-            // Generate clean Venmo deep-link note context for the business
-            const venmoNote = encodeURIComponent(`Reilly Electric Service Call: ${name} - ${timeframe}`);
-            const venmoUrl = `https://venmo.com/Rebecca_Champagne?tx=pay&amount=150&note=${venmoNote}`;
+            
             
             // Seamlessly route user to the Venmo payment step in a fresh tab
             window.open(venmoUrl, '_blank');
