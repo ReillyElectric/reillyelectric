@@ -1,4 +1,244 @@
-value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Online | Reilly Electric, LLC</title>
+    <style>
+        :root {
+            --primary-blue: #1A365D;
+            --accent-gold: #D69E2E;
+            --neutral-dark: #2D3748;
+            --neutral-light: #F7FAFC;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--neutral-light);
+            color: var(--neutral-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            border: 1px solid #E2E8F0;
+        }
+
+        .price-badge {
+            background-color: #EBF8FF;
+            border: 1px solid #BEE3F8;
+            color: #2B6CB0;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4A5568;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4A5568;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--neutral-dark);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #CBD5E0;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #FFF;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.15);
+        }
+
+        .venmo-notice {
+            background-color: #F0F4F8;
+            border-left: 4px solid #008CFF;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .venmo-btn {
+            display: block;
+            width: 100%;
+            background-color: #008CFF;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 140, 255, 0.3);
+        }
+
+        .venmo-btn:hover {
+            background-color: #0074D9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>REILLY ELECTRIC, LLC</h1>
+        <p>Professional Residential & Commercial Electrical Services</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Service Details Card -->
+        <div class="card">
+            <span class="price-badge">Standard Flat Rate: $150</span>
+            <h2>Book a Service Call</h2>
+            <p>Need troubleshooting, a diagnostic run, or a quick electrical repair? Secure your booking instantly. Our dispatch fee covers the initial travel, evaluation, and standard diagnostic resolution steps.</p>
+            
+            <ul>
+                <li><strong>Convenient Scheduling:</strong> Includes our expanded weekday evening availability.</li>
+                <li><strong>Transparent Pricing:</strong> Simple, flat-rate scheduling booking upfront.</li>
+                <li><strong>Licensed & Insured:</strong> Expert care matching residential code standards.</li>
+            </ul>
+        </div>
+
+        <!-- Booking Intake Form -->
+        <div class="card">
+            <h2>1. Enter Your Details</h2>
+            <form id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required placeholder="John Smith">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required placeholder="(203) 555-0199">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Service Address *</label>
+                    <input type="text" id="address" required placeholder="123 Main St, Wallingford, CT">
+                </div>
+
+                <div class="form-group">
+                    <label for="timeframe">Preferred Time Frame *</label>
+                    <select id="timeframe" required>
+                        <option value="" disabled selected>Select a preference...</option>
+                        <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                        <option value="Afternoon (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>
+                        <option value="Evening Hours (5 PM - 9 PM)">Evening Hours (5 PM - 9 PM)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue">Description of Issue / Scope *</label>
+                    <textarea id="issue" rows="3" required placeholder="Example: Outlets stopped working in the kitchen / Need a new light fixture hung."></textarea>
+                </div>
+
+                <h2>2. Secure & Complete Payment</h2>
+                <div class="venmo-notice">
+                    <p style="margin-bottom: 0; font-size: 0.95rem;">
+                        <strong>Venmo Authorization:</strong> To locks in your appointment slot, please click the link below to pay the <strong>$150 service call fee</strong> securely via Venmo to <strong>@Rebecca_Champagne</strong>. 
+                    </p>
+                </div>
+
+                <button type="submit" class="venmo-btn">Pay $150 via Venmo & Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Reilly Electric, LLC. All Rights Reserved. Licensed E-1 Professional Electrical Services.</p>
+    </footer>
+
+    <script>
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            // Capture values for verification or data tracking integrations later
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
             const address = document.getElementById('address').value;
             const timeframe = document.getElementById('timeframe').value;
             const issue = document.getElementById('issue').value;
