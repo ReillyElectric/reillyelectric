@@ -31,7 +31,7 @@
             max-width: 600px;
             margin: 20px auto;
             background: var(--white);
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
             border-top: 6px solid var(--primary-blue);
@@ -40,7 +40,7 @@
         .business-card-wrapper {
             width: 100%;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .business-card {
@@ -51,48 +51,38 @@
             margin: 0 auto;
         }
 
-        /* Form styling */
-        .booking-form {
+        .info-panel {
             background: #F8FAFC;
-            padding: 20px;
+            border: 1px solid #E2E8F0;
             border-radius: 8px;
-            border: 2px dashed var(--accent-gold);
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
         }
 
-        .form-title {
+        .section-title {
             color: var(--primary-blue);
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .hours-info {
-            text-align: center;
-            font-size: 13px;
-            color: #4A5568;
-            margin-bottom: 15px;
+            font-size: 16px;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 4px;
         }
 
-        .input-group {
-            margin-bottom: 12px;
+        .info-list {
+            list-style: none;
         }
 
-        .input-group label {
-            display: block;
-            font-weight: bold;
-            font-size: 14px;
-            color: var(--primary-blue);
-            margin-bottom: 4px;
-        }
-
-        .input-group input, .input-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #CBD5E0;
-            border-radius: 5px;
+        .info-list li {
             font-size: 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-list li span {
+            margin-right: 10px;
         }
 
         .btn {
@@ -100,20 +90,20 @@
             background: var(--primary-blue);
             color: var(--white);
             padding: 16px;
-            margin: 10px auto;
+            margin: 12px auto;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
             text-align: center;
-            width: 100%;
-            border: none;
-            cursor: pointer;
+            max-width: 100%;
+            transition: background 0.2s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .btn.secondary {
-            background: #2B6CB0;
+        .btn:active {
+            background: #102A43;
+            transform: scale(0.98);
         }
 
         .footer {
@@ -133,80 +123,34 @@
             <img src="IMG_2136.jpg" alt="Reilly Electric, LLC Business Card" class="business-card">
         </div>
 
-        <!-- Interactive Typing Fields Box -->
-        <div class="booking-form">
-            <h3 class="form-title">Enter Your Details to Request Booking</h3>
-            <p class="hours-info">
-                Available Weekdays: 7am-2pm | Weeknights: 5pm-7pm <br>
-                <span style="color: #C53030;">Closed Fridays & Sundays</span>
-            </p>
-
-            <div class="input-group">
-                <label>Name</label>
-                <input type="text" id="custName" placeholder="Your Full Name">
-            </div>
-
-            <div class="input-group">
-                <label>Address</label>
-                <input type="text" id="custAddress" placeholder="Street Address">
-            </div>
-
-            <div class="input-group">
-                <label>Town / State</label>
-                <input type="text" id="custTown" placeholder="e.g. Wallingford, CT">
-            </div>
-
-            <div class="input-group">
-                <label>Preferred Day & Time Block</label>
-                <select id="custTime">
-                    <option value="">-- Choose a time slot --</option>
-                    <option value="Weekday (7am - 2pm)">Weekday (7am - 2pm)</option>
-                    <option value="Weeknight (5pm - 7pm)">Weeknight (5pm - 7pm)</option>
-                    <option value="Saturday Appointment">Saturday Appointment</option>
-                </select>
-            </div>
-            
-            <p style="font-size: 12px; text-align: center; color: #718096; margin-top: 10px;">
-                Fill out the fields above, then tap a button below to launch your text request!
-            </p>
+        <!-- Required Details Check Panel -->
+        <div class="info-panel">
+            <div class="section-title">📝 What to include in your text</div>
+            <ul class="info-list">
+                <li><span>✅</span> Your Name</li>
+                <li><span>✅</span> Street Address</li>
+                <li><span>✅</span> Town & State</li>
+                <li><span>✅</span> Preferred Appointment Day & Time</li>
+            </ul>
         </div>
 
-        <!-- Action Buttons that pull data dynamically via JavaScript -->
-        <button onclick="sendText('+18606340991')" class="btn">
-            📱 Text 860-634-0991 to Book
-        </button>
+        <!-- Text Action Buttons -->
+        <p style="text-align: center; font-size: 14px; font-weight: bold; color: var(--primary-blue); margin-bottom: 5px;">
+            Tap a number below to text us directly to book:
+        </p>
 
-        <button onclick="sendText('+12039823123')" class="btn secondary">
-            📱 Text 203-982-3123 to Book
-        </button>
+        <a href="sms:+18606340991?&body=Hi Reilly Electric! I'd like to request an appointment.%0AName:%0AAddress:%0ATown/State:%0APreferred Day/Time:" class="btn">
+            📱 Text 860-634-0991
+        </a>
+
+        <a href="sms:+12039823123?&body=Hi Reilly Electric! I'd like to request an appointment.%0AName:%0AAddress:%0ATown/State:%0APreferred Day/Time:" class="btn">
+            📱 Text 203-982-3123
+        </a>
 
         <div class="footer">
             &copy; 2026 Reilly Electric, LLC. All rights reserved. <br> Serving All of Connecticut.
         </div>
     </div>
-
-    <script>
-        function sendText(phoneNumber) {
-            // Grab values typed into the screen boxes
-            var name = document.getElementById('custName').value || '[Empty]';
-            var address = document.getElementById('custAddress').value || '[Empty]';
-            var town = document.getElementById('custTown').value || '[Empty]';
-            var timeSlot = document.getElementById('custTime').value || '[Not Selected]';
-
-            // Construct the clean text message
-            var message = "Hi Reilly Electric! I would like to request an electrical appointment.\n\n" +
-                          "Name: " + name + "\n" +
-                          "Address: " + address + "\n" +
-                          "Town/State: " + town + "\n" +
-                          "Requested Time: " + timeSlot;
-
-            // Encode text strings safely for SMS app launch
-            var encodedMessage = encodeURIComponent(message);
-            
-            // Launch the customer's native messaging application
-            window.location.href = "sms:" + phoneNumber + "?&body=" + encodedMessage;
-        }
-    </script>
 
 </body>
 </html>
